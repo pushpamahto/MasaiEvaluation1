@@ -1,19 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const doctorForm = document.getElementById('doctorForm');
-    const doctorTableBody = document.getElementById('doctorTableBody');
-    const filterSelect = document.getElementById('filter');
+    
+
+    let form=document.querySelector('form');
+    let tbody=document.querySelector('tbody');
+    let filter=document.querySelector('filter')
+
   
-    doctorForm.addEventListener('submit', function (event) {
+    form.addEventListener('submit', function (event) {
       event.preventDefault();
   
-      const name = document.getElementById('name').value;
-      const doctorId = document.getElementById('doctor_id').value;
-      const specialization = document.getElementById('specialization').value;
-      const experience = document.getElementById('experience').value;
-      const email = document.getElementById('email').value;
-      const mobile = document.getElementById('mobile').value;
+      let name = document.getElementById('name').value;
+      let doctorId = document.getElementById('doctor_id').value;
+      let specialization = document.getElementById('specialization').value;
+      let experience = document.getElementById('experience').value;
+      let email = document.getElementById('email').value;
+      let mobile = document.getElementById('mobile').value;
   
-      // Calculate role based on experience
+      
       let role;
       if (experience > 5) {
         role = 'Senior';
@@ -23,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
         role = 'Trainee';
       }
   
-      // Create a new row and append it to the table
-      const newRow = document.createElement('tr');
+    
+      let newRow = document.createElement('tr');
       newRow.innerHTML = `
         <td>${name}</td>
         <td>${doctorId}</td>
@@ -35,17 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
         <td>${role}</td>
         <td><button onclick="deleteRow(this)">Delete</button></td>
       `;
-      doctorTableBody.appendChild(newRow);
+      tbody.appendChild(newRow);
   
-      // Clear the form fields
-      doctorForm.reset();
+      
+      form.reset();
     });
   
-    filterSelect.addEventListener('change', function () {
-      const selectedSpecialization = filterSelect.value.toLowerCase();
-      const rows = doctorTableBody.getElementsByTagName('tr');
+    filter.addEventListener('change', function () {
+      let selectedSpecialization = filter.value.toLowerCase();
+      let rows = tbody.getElementsByTagName('tr');
   
-      for (const row of rows) {
+      for (let row of rows) {
         const specializationCell = row.getElementsByTagName('td')[2];
         const showRow = selectedSpecialization === '' || specializationCell.textContent.toLowerCase() === selectedSpecialization;
   
