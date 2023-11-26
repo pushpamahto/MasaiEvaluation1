@@ -5,21 +5,7 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!-- Use this form for data input  -->
-    <form>
-      <input placeholder="Name" type="text" id="name" />
-      <input placeholder="Doctor ID" type="text" id="doctor_id" />
-      <select id="specialization">
-        <option value="">Select Specialization</option>
-        <option value="Dermatologist">Dermatologist</option>
-        <option value="Dentist">Dentist</option>
-        <option value="Gynecologist">Gynecologist</option>
-      </select>
-      <input placeholder="Experience" type="number" id="experience" />
-      <input placeholder="Email" type="email" id="email" />
-      <input placeholder="Mobile No." type="number" id="mobile" />
-      <input type="submit" value="Submit" />
-    </form>
+    <h1>HOSPITAL - DOCTORS RECORD</h1>
 
     <!-- Use this Select tag for filter part  -->
     <select id="filter">
@@ -28,6 +14,37 @@
       <option value="Dentist">Dentist</option>
       <option value="Gynecologist">Gynecologist</option>
     </select>
+
+    <!-- Use this form for data input  -->
+    <div id="box">
+    <form>
+      <label for="name">Doctor Name</label>
+      <input placeholder="Name" type="text" id="name" />
+      <label for="doctot_id">Doctor ID</label>
+      <input placeholder="Doctor ID" type="text" id="doctor_id" />
+      <label for="specialization">Specialization</label>
+      <select id="specialization">
+        <option value="">Select Specialization</option>
+        <option value="Dermatologist">Dermatologist</option>
+        <option value="Dentist">Dentist</option>
+        <option value="Gynecologist">Gynecologist</option>
+      </select>
+      <label for="experience">Experience</label>
+      <input placeholder="Experience" type="number" id="experience" />
+      <label for="email">Email</label><br>
+      <input placeholder="Email" type="email" id="email" /><br>
+      <label for="mobile">Mobile No.</label>
+      <input placeholder="Mobile No." type="number" id="mobile" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Use this Select tag for filter part 
+    <select id="filter">
+      <option value="">Select Specialization</option>
+      <option value="Dermatologist">Dermatologist</option>
+      <option value="Dentist">Dentist</option>
+      <option value="Gynecologist">Gynecologist</option>
+    </select> -->
     <table>
       <thead>
         <tr>
@@ -45,6 +62,7 @@
         <!-- Append Rows here using JS & DOM  -->
       </tbody>
     </table>
+    </div>
   </body>
   
   <script src="script.js">

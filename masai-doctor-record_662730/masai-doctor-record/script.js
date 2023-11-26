@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <td>${email}</td>
         <td>${mobile}</td>
         <td>${role}</td>
-        <td><button onclick="deleteRow(this)">Delete</button></td>
+        <td><button onclick="deleteRow(this)" style="background-color: red";>Delete</button></td>
       `;
       tbody.appendChild(newRow);
   
